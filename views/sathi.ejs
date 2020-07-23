@@ -1,0 +1,18 @@
+
+<%- include("partials/header")-%>
+<h1>Customer</h1>
+
+<% friends.forEach(function(sathi){ %>
+    <li>
+        <strong><%= sathi.name %></strong>
+                 <%= sathi.problem%>---
+                 <span><%=sathi.created %></span>
+                 <form action="/delet/<%=sathi._id%>?_method=DELETE" method='POST'>
+                   <button class="btn btn-sm btn-primary">del</button>
+                </form>
+    </li>
+<% }); %>
+<a href="/">Return</a>
+<a href="/logout">logout</a>
+
+<%-include("partials/footer")-%>
